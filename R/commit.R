@@ -32,6 +32,7 @@ commit <- function(commit_message, prepend) { # alias commit_GPT() commit_messag
   encoded_git_diff_output <- generate_encoded_git_diff_output(git_diff_output)
 
   # Make commit message
+  encoded_git_diff_output <- substr(encoded_git_diff_output, 1, 4000)
   if(missing(commit_message)) { commit_message <- generate_commit_message(encoded_git_diff_output) }
 
   # Add, commit and push
@@ -200,12 +201,33 @@ add_commit_push <- function(commit_message, prepend) {
   if(missing(prepend)) { prepend <- "" }
   commit_message_with_prepend <-paste0(prepend, trimws(commit_message))
 
-  # Not sure how this will handle single quotes, other chars may need escaping
-  command <- paste0(
-    "git add . \ngit commit -m '",
-    commit_message_with_prepend,
-    "'\ngit push")
-  system(command)
+    if(os == "Windows") {
+
+     # Windows
+      escaped_commit_message_with_prepend <- gsub("([\"'!@#$%&*()[\\]\\{\\};:/\\\\?\\|])", "\\\\\\1", commit_message_with_prepend)
+
+      system2("git", c("add", "."), stdout=TRUE)
+
+      # Couldn't get git commit to work on windows unless -c (config) flag was provided
+      command <- paste0('git -c user.name="Your Name" -c user.email="youremail@example.com" commit -m "',
+                        escaped_commit_message_with_prepend,
+                        '"')
+      system(command, intern=TRUE)
+
+      system2("git", c("push"), stdout=TRUE)
+
+    } else {
+
+      # nix
+      # Not sure how this will handle single quotes, other chars may need escaping
+      command <- paste0(
+        "git add . \ngit commit -m '",
+        commit_message_with_prepend,
+        "'\ngit push")
+      system(command)
+
+    }
+
 }
 
 
