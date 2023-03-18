@@ -210,7 +210,9 @@ add_commit_push <- function(commit_message, prepend) {
     system2("git", c("add", "."), stdout=TRUE)
 
     # Couldn't get git commit to work on windows unless -c (config) flag was provided
-    command <- paste0('git -c user.name="Your Name" -c user.email="youremail@example.com" commit -m "',
+    command <- paste0('git -c user.name="', Sys.getenv("GIT_AUTHOR_NAME"),
+                      '" -c user.email="',
+                      Sys.getenv("GIT_AUTHOR_EMAIL"), '" commit -m "',
                       escaped_commit_message_with_prepend,
                       '"')
     system(command, intern=TRUE)
