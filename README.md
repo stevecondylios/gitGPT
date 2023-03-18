@@ -16,7 +16,7 @@ devtools::install_github("stevecondylios/gitGPT")
 ```R
 Sys.setenv(OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxx)
 
-# Windows users will need to set these two environment variables:
+# Windows users must also set these two environment variables:
 Sys.setenv(GIT_AUTHOR_NAME = "Your Name")
 Sys.setenv(GIT_AUTHOR_EMAIL = "Your Email")
 ```
