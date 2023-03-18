@@ -62,15 +62,14 @@ commit <- function(commit_message, prepend) { # alias commit_GPT() commit_messag
 generate_git_diff_output <- function() {
 
   # See: https://r-pkgs.org/misc.html#sec-misc-inst
-  windows_script_path <- system.file("git_diff_and_new_files.ps1", package = "gitGPT")
+  windows_script_path <- system.file("git_diff_and_new_files.bat", package = "gitGPT")
   nix_script_path <- system.file("git_diff_and_new_files.sh", package = "gitGPT")
 
   os <- Sys.info()['sysname']
 
   if(os == "Windows") {
 
-    git_diff_output <- system2(
-      "powershell", args = c("-File", windows_script_path), stdout = TRUE)
+    git_diff_output <- system(windows_script_path, intern=TRUE)
 
   } else {
 
