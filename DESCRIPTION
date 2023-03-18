@@ -1,0 +1,21 @@
+Package: gitGPT
+Type: Package
+Title: Automated Git Commit Messages using OpenAI's GPT Model
+Version: 0.1.0
+Imports: httr, 
+    jsonlite 
+Authors@R: c(person(given="Steve", family="Condylios", 
+    role=c("aut", "cre"), email="steve.condylios@gmail.com", 
+    comment("https://orcid.org/0000-0003-0599-844X")))
+Maintainer: Steve Condylios <steve.condylios@gmail.com>
+BugReports: https://github.com/stevecondylios/gitGPT/issues
+License: MIT + file LICENSE
+URL: https://github.com/stevecondylios/gitGPT
+Description: The gitGPT package is an R wrapper that automates the process of adding,
+    committing, and pushing changes to a git repository
+    using auto-generated commit messages. The package leverages the OpenAI
+    GPT-3.5 Turbo model to generate meaningful
+    commit messages based on the git diff output.
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.2.3

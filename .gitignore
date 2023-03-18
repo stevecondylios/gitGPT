@@ -1,0 +1,9 @@
+**/DS_Store
+NOTES.md
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.DS_Store
+docs
+.Rcheck
