@@ -69,7 +69,7 @@ generate_git_diff_output <- function() {
 
   if(os == "Windows") {
 
-    git_diff_output <- system(windows_script_path, intern=TRUE)
+    git_diff_output <- system2(windows_script_path, stdout = TRUE)
 
   } else {
 
