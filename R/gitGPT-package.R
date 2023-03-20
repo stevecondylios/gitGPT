@@ -1,5 +1,5 @@
-#' gitGPT: Automated Git Commit Messages Using 'GPT-3.5 Turbo' Large
-#'     Language Model By 'OpenAI'
+#' gitGPT: Automated Git Commit Messages Using the 'OpenAI' 'GPT-3.5 Turbo'
+#'     Large Language Model
 #'
 #' An R wrapper that automates the process of adding,
 #' committing, and pushing changes to a git repository
