@@ -212,7 +212,8 @@ add_commit_push <- function(commit_message, prepend) {
                       '"')
     system(command, intern=TRUE)
 
-    system2("git", c("push"), stdout=TRUE)
+    output <- system2("git", c("push"), stdout=TRUE)
+    message(output)
 
   } else {
 
