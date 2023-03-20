@@ -222,8 +222,8 @@ add_commit_push <- function(commit_message, prepend) {
       "git add . \ngit commit -m '",
       commit_message_with_prepend,
       "'\ngit push")
-    system(command)
-
+    output <- system(command, intern = TRUE)
+    message(output)
   }
 
 }
