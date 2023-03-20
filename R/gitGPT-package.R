@@ -1,9 +1,10 @@
-#' gitGPT: R Package for Automated Git Commit Messages
+#' gitGPT: Automated Git Commit Messages Using 'GPT-3.5 Turbo' Large
+#'     Language Model By 'OpenAI'
 #'
-#' The gitGPT package is an R wrapper that automates the process of adding,
+#' An R wrapper that automates the process of adding,
 #' committing, and pushing changes to a git repository
-#' using auto-generated commit messages. The package leverages the OpenAI
-#' GPT-3.5 Turbo model to generate meaningful
+#' using auto-generated commit messages. Leverages the 'OpenAI'
+#' 'GPT-3.5 Turbo' model to generate meaningful
 #' commit messages based on the git diff output.
 #'
 #' @section Functions:

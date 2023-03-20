@@ -10,7 +10,7 @@
 #'     will be generated automatically.
 #' @param prepend A string to prepend to the commit message. Defaults to an
 #'     empty string. A convention may
-#'     be to prepend 'GPT: ' to the beginnining of the commit message so you can
+#'     be to prepend 'GPT: ' to the beginning of the commit message so you can
 #'     differentiate between those you wrote vs those GPT composed.
 #' @export
 #' @examples

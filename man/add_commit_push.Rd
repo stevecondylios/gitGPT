@@ -17,15 +17,13 @@ Defaults to an empty string.}
 None
 }
 \description{
-This function automates the process of adding changes to a Git repository,
+Aautomates the process of adding changes to a Git repository,
 committing
 those changes with a commit message, and pushing the changes to a remote
 repository.
 }
 \examples{
 \dontrun{
-  # This function adds all saved changes, commits then with a message from
-  # GPT, and pushes to a remote repository (e.g. GitHub).
   add_commit_push()
 }
 }

@@ -10,14 +10,13 @@ generate_git_diff_output()
 A character vector containing the git diff output.
 }
 \description{
-This function returns the git diff output for the current working directory.
+Returns the git diff output for the current working directory, and lists
+any new files found.
 It checks the system's OS and executes the appropriate command to generate
 the git diff.
 }
 \examples{
 \dontrun{
-  # This generates a string representing the output of git diff with any
-  # new files also listed
   # View with cat() for easier reading
   cat(gitGPT:::generate_git_diff_output())
 }

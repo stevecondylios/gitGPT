@@ -15,13 +15,13 @@ A character vector of length 1 containing the generated commit
     message.
 }
 \description{
-This function generates a commit message by making an API call to OpenAI's
+Generates a commit message by making an API call to OpenAI's
 GPT-3.5 Turbo model using the
 encoded git diff output as input.
 }
 \examples{
 \dontrun{
-  # This function sends the encoded git diff to GPT and returns a
+  # Sends the encoded git diff to GPT and returns a
   # character vector containing the commit message:
   git_diff_output <- gitGPT:::generate_git_diff_output()
   edo <- gitGPT:::generate_encoded_git_diff_output(git_diff_output)

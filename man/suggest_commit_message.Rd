@@ -16,16 +16,13 @@ A character vector of length 1 with the suggested commit message
     based on the provided git diff.
 }
 \description{
-This function suggests a commit message by utilizing the OpenAI GPT-3.5
+Suggests a commit message by utilizing the OpenAI GPT-3.5
 Turbo model.
 It takes a git diff as input and returns a meaningful
 commit message.
 }
 \examples{
 \dontrun{
-  # This function will generate a commit message based on the output of
-  # git diff, but it won't add, commit, or push, instead, it will simply
-  # provide the output as a character vector of length 1.
   suggest_commit_message()
 }
 }

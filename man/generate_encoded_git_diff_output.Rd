@@ -13,13 +13,11 @@ generate_encoded_git_diff_output(git_diff_output)
 A character vector containing the URL-encoded git diff output.
 }
 \description{
-This function takes the git diff output and encodes it for use in the API
+Takes the git diff output and encodes it for use in the API
 call to OpenAI's GPT-3.5 Turbo model.
 }
 \examples{
 \dontrun{
-  # This function encodes the git diff output so it can be sent in a curl
-  # request
   git_diff_output <- gitGPT:::generate_git_diff_output()
   gitGPT:::generate_encoded_git_diff_output(git_diff_output)
 }
