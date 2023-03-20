@@ -12,9 +12,10 @@ BugReports: https://github.com/stevecondylios/gitGPT/issues
 License: MIT + file LICENSE
 URL: https://github.com/stevecondylios/gitGPT
 Description: The gitGPT package is an R wrapper that automates the process of adding,
-    committing, and pushing changes to a git repository
-    using auto-generated commit messages. The package leverages the OpenAI
-    GPT-3.5 Turbo model to generate meaningful
+    committing, and pushing changes to a 'git' repository
+    using auto-generated commit messages. The package leverages the 'OpenAI'
+    'GPT-3.5 Turbo' model (<https://platform.openai.com/docs/models/gpt-3>) 
+    to generate meaningful
     commit messages based on the git diff output.
 Encoding: UTF-8
 LazyData: true
