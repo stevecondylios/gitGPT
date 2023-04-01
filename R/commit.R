@@ -39,6 +39,7 @@ commit <- function(commit_message, prepend) { # alias commit_GPT() commit_messag
   # sink("/dev/null")
   # on.exit(sink())
   add_commit_push(commit_message)
+  # if(exists("output")) { output }
 
 }
 
@@ -222,10 +223,12 @@ add_commit_push <- function(commit_message, prepend) {
                       Sys.getenv("GIT_AUTHOR_EMAIL"), '" commit -m "',
                       escaped_commit_message_with_prepend,
                       '"')
-    system(command, intern=TRUE)
+    git_commit_output <- system(command, intern=TRUE)
 
-    output <- system2("git", c("push"), stdout=TRUE)
-    message(output)
+    git_push_output <- system2("git", c("push"), stdout=TRUE)
+   
+    output <- c(git_push_output, commit_message_with_prepend)
+    output
 
   } else {
 
