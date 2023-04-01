@@ -228,7 +228,7 @@ add_commit_push <- function(commit_message, prepend) {
     git_push_output <- system2("git", c("push"), stdout=TRUE)
    
     output <- c(git_push_output, commit_message_with_prepend)
-    output
+    # output
 
   } else {
 
