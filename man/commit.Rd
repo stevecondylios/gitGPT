@@ -15,6 +15,9 @@ empty string. A convention may
 be to prepend 'GPT: ' to the beginning of the commit message so you can
 differentiate between those you wrote vs those GPT composed.}
 }
+\value{
+No return value, called for side effects.
+}
 \description{
 An R wrapper to automatically add, commit, and push changes
 to a git repository using an auto-generated commit message. The commit

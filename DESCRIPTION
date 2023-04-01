@@ -1,7 +1,7 @@
 Package: gitGPT
 Type: Package
 Title: Automated Git Commit Messages using OpenAI's GPT Model
-Version: 0.1.0
+Version: 0.1.1
 Imports: httr, 
     jsonlite 
 Authors@R: c(person(given="Steve", family="Condylios", 

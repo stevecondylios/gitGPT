@@ -12,7 +12,7 @@
 #'     empty string. A convention may
 #'     be to prepend 'GPT: ' to the beginning of the commit message so you can
 #'     differentiate between those you wrote vs those GPT composed.
-#' @return NULL
+#' @return No return value, called for side effects.
 #' @export
 #' @examples
 #' \dontrun{
@@ -191,7 +191,7 @@ generate_commit_message <- function(encoded_git_diff_output) {
 #'     the changes.
 #' @param prepend A character string to prepend to the commit message.
 #'     Defaults to an empty string.
-#' @return NULL
+#' @return No return value, called for side effects.
 #' @export
 #' @examples
 #' \dontrun{

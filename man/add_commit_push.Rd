@@ -13,6 +13,9 @@ the changes.}
 \item{prepend}{A character string to prepend to the commit message.
 Defaults to an empty string.}
 }
+\value{
+No return value, called for side effects.
+}
 \description{
 Aautomates the process of adding changes to a Git repository,
 committing
