@@ -36,7 +36,8 @@ commit <- function(commit_message, prepend) { # alias commit_GPT() commit_messag
   if(missing(commit_message)) { commit_message <- generate_commit_message(encoded_git_diff_output) }
 
   # Add, commit and push
-
+  # sink("/dev/null")
+  # on.exit(sink())
   add_commit_push(commit_message)
 
 }
@@ -54,10 +55,11 @@ commit <- function(commit_message, prepend) { # alias commit_GPT() commit_messag
 #' the git diff.
 #'
 #' @return A character vector containing the git diff output.
+#' @export
 #' @examples
 #' \dontrun{
 #'   # View with cat() for easier reading
-#'   cat(gitGPT:::generate_git_diff_output())
+#'   cat(generate_git_diff_output())
 #' }
 generate_git_diff_output <- function() {
 
@@ -96,10 +98,11 @@ generate_git_diff_output <- function() {
 #'
 #' @param git_diff_output A character vector containing the git diff output.
 #' @return A character vector containing the URL-encoded git diff output.
+#' @export
 #' @examples
 #' \dontrun{
-#'   git_diff_output <- gitGPT:::generate_git_diff_output()
-#'   gitGPT:::generate_encoded_git_diff_output(git_diff_output)
+#'   git_diff_output <- generate_git_diff_output()
+#'   generate_encoded_git_diff_output(git_diff_output)
 #' }
 generate_encoded_git_diff_output <- function(git_diff_output) {
   utils::URLencode(git_diff_output)
@@ -122,13 +125,14 @@ generate_encoded_git_diff_output <- function(git_diff_output) {
 #'     git diff output.
 #' @return A character vector of length 1 containing the generated commit
 #'     message.
+#' @export
 #' @examples
 #' \dontrun{
 #'   # Sends the encoded git diff to GPT and returns a
 #'   # character vector containing the commit message:
-#'   git_diff_output <- gitGPT:::generate_git_diff_output()
-#'   edo <- gitGPT:::generate_encoded_git_diff_output(git_diff_output)
-#'   gitGPT:::generate_commit_message(edo)
+#'   git_diff_output <- generate_git_diff_output()
+#'   edo <- generate_encoded_git_diff_output(git_diff_output)
+#'   enerate_commit_message(edo)
 #' }
 generate_commit_message <- function(encoded_git_diff_output) {
   # See: https://github.com/curlconverter/curlconverter
@@ -187,13 +191,21 @@ generate_commit_message <- function(encoded_git_diff_output) {
 #'     Defaults to an empty string.
 #'
 #' @return None
+#' @export
 #' @examples
 #' \dontrun{
 #'   add_commit_push()
 #' }
 add_commit_push <- function(commit_message, prepend) {
 
-  if(missing(prepend)) { prepend <- "" }
+  if(missing(prepend)) {
+    if(is.null(options("git_prepend")[[1]])) {
+      prepend <- ""
+    } else {
+      prepend <- options("git_prepend")[[1]]
+    }
+   }
+
   commit_message_with_prepend <-paste0(prepend, trimws(commit_message))
 
   os <- Sys.info()['sysname']
@@ -223,8 +235,11 @@ add_commit_push <- function(commit_message, prepend) {
       "git add . \ngit commit -m '",
       commit_message_with_prepend,
       "'\ngit push")
-    output <- system(command, intern = TRUE)
-    message(output)
+    # note: ignore.stderr = TRUE was necessary to prevent git push message
+    # appearing in R console even though it's not an error.
+    output <- system(command, intern = TRUE, ignore.stdout = TRUE, ignore.stderr = TRUE)
+    # message(output)
+    # system("git reset HEAD~ && git push -f")
   }
 
 }
