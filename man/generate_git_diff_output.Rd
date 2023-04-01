@@ -18,6 +18,6 @@ the git diff.
 \examples{
 \dontrun{
   # View with cat() for easier reading
-  cat(gitGPT:::generate_git_diff_output())
+  cat(generate_git_diff_output())
 }
 }

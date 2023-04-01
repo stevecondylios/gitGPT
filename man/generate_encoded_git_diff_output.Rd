@@ -18,7 +18,7 @@ call to OpenAI's GPT-3.5 Turbo model.
 }
 \examples{
 \dontrun{
-  git_diff_output <- gitGPT:::generate_git_diff_output()
-  gitGPT:::generate_encoded_git_diff_output(git_diff_output)
+  git_diff_output <- generate_git_diff_output()
+  generate_encoded_git_diff_output(git_diff_output)
 }
 }

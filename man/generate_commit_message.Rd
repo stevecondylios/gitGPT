@@ -23,8 +23,8 @@ encoded git diff output as input.
 \dontrun{
   # Sends the encoded git diff to GPT and returns a
   # character vector containing the commit message:
-  git_diff_output <- gitGPT:::generate_git_diff_output()
-  edo <- gitGPT:::generate_encoded_git_diff_output(git_diff_output)
-  gitGPT:::generate_commit_message(edo)
+  git_diff_output <- generate_git_diff_output()
+  edo <- generate_encoded_git_diff_output(git_diff_output)
+  enerate_commit_message(edo)
 }
 }
