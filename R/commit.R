@@ -12,6 +12,7 @@
 #'     empty string. A convention may
 #'     be to prepend 'GPT: ' to the beginning of the commit message so you can
 #'     differentiate between those you wrote vs those GPT composed.
+#' @return NULL
 #' @export
 #' @examples
 #' \dontrun{
@@ -147,7 +148,7 @@ generate_commit_message <- function(encoded_git_diff_output) {
 
   Set it in your R session with:
 
-  `Sys.setenv(OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx)`
+  `Sys.setenv(OPENAI_API_KEY=\"sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\")`
 
   Or add it to your .Renviron, .zshenv, .bashrc file.'
 
@@ -190,8 +191,7 @@ generate_commit_message <- function(encoded_git_diff_output) {
 #'     the changes.
 #' @param prepend A character string to prepend to the commit message.
 #'     Defaults to an empty string.
-#'
-#' @return None
+#' @return NULL
 #' @export
 #' @examples
 #' \dontrun{
@@ -226,7 +226,7 @@ add_commit_push <- function(commit_message, prepend) {
     git_commit_output <- system(command, intern=TRUE)
 
     git_push_output <- system2("git", c("push"), stdout=TRUE)
-   
+
     output <- c(git_push_output, commit_message_with_prepend)
     # output
 
@@ -267,7 +267,6 @@ add_commit_push <- function(commit_message, prepend) {
 #' @param diff An optional character vector containing the git diff. If not
 #' provided, the function will automatically
 #' generate the git diff output for the current working directory.
-#'
 #' @return A character vector of length 1 with the suggested commit message
 #'     based on the provided git diff.
 #' @export
