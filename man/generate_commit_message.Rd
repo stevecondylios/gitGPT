@@ -15,8 +15,8 @@ A character vector of length 1 containing the generated commit
     message.
 }
 \description{
-Generates a commit message by making an API call to OpenAI's
-GPT-3.5 Turbo model using the
+Generates a commit message by making an API call to the 'OpenAI'
+'GPT-3.5 Turbo' model using the
 encoded git diff output as input.
 }
 \examples{

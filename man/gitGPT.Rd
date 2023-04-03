@@ -19,9 +19,9 @@ commit messages based on the git diff output.
 - \code{\link{generate_git_diff_output}}: Returns the git diff output for the
     current working directory.
 - \code{\link{generate_encoded_git_diff_output}}: Encodes the git diff output
-    for use in the API call to OpenAI's GPT-3.5 Turbo model.
+    for use in the API call to the 'OpenAI' 'GPT-3.5 Turbo' model.
 - \code{\link{generate_commit_message}}: Generates a commit message using an
-    API call to OpenAI's GPT-3.5 Turbo model with the encoded git diff output.
+    API call to the 'OpenAI' 'GPT-3.5 Turbo' model with the encoded git diff output.
 - \code{\link{add_commit_push}}: Adds, commits, and pushes changes to a git
     repository using the provided commit message.
 }

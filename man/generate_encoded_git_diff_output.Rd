@@ -14,7 +14,7 @@ A character vector containing the URL-encoded git diff output.
 }
 \description{
 Takes the git diff output and encodes it for use in the API
-call to OpenAI's GPT-3.5 Turbo model.
+call to the 'OpenAI' 'GPT-3.5 Turbo' model.
 }
 \examples{
 \dontrun{

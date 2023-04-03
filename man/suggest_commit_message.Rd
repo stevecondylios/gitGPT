@@ -16,8 +16,8 @@ A character vector of length 1 with the suggested commit message
     based on the provided git diff.
 }
 \description{
-Suggests a commit message by utilizing the OpenAI GPT-3.5
-Turbo model.
+Suggests a commit message by utilizing the 'OpenAI' 'GPT-3.5
+Turbo' model.
 It takes a git diff as input and returns a meaningful
 commit message.
 }
