@@ -3,7 +3,11 @@
 # Installation
 
 ```r
-devtools::install_github("stevecondylios/gitGPT")
+# Install
+install.packages("gitGPT")
+
+# Load library
+library(gitGPT)
 ```
 
 # Quick Start Guide
@@ -14,7 +18,7 @@ devtools::install_github("stevecondylios/gitGPT")
 2. Set the key as an environment variable inside your R session:
 
 ```R
-Sys.setenv(OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxx)
+Sys.setenv(OPENAI_API_KEY="sk-xxxxxxxxxxxxxxxxxxxxxxxxx")
 
 # Windows users must also set these two environment variables:
 Sys.setenv(GIT_AUTHOR_NAME = "Your Name")
