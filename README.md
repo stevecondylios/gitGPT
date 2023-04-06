@@ -3,10 +3,7 @@
 # Installation
 
 ```r
-# Install
 install.packages("gitGPT")
-
-# Load library
 library(gitGPT)
 ```
 
